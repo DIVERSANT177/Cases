@@ -2,6 +2,11 @@
 
 <%= render @case_box %>
 
+<div id="skins">
+  <h3>Список скинов</h3>
+  <%= render @case_box.skins %>
+</div>
+
 <div>
   <%= link_to "Back to case boxes", case_boxes_path %>
 </div>

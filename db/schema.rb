@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_26_083045) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_26_084501) do
   create_table "case_boxes", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -30,5 +30,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_26_083045) do
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "case_box_id", null: false
+    t.index ["case_box_id"], name: "index_skins_on_case_box_id"
   end
+
+  add_foreign_key "skins", "case_boxes"
 end

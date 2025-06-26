@@ -8,6 +8,7 @@ class CaseBoxesController < ApplicationController
 
   # GET /case_boxes/1 or /case_boxes/1.json
   def show
+    @skins = @case_box.skins
   end
 
   private
