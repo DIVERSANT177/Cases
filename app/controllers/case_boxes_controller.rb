@@ -1,5 +1,5 @@
 class CaseBoxesController < ApplicationController
-  before_action :set_case_box, only: %i[ show ]
+  before_action :set_case_box, only: %i[ show open ]
 
   # GET /case_boxes or /case_boxes.json
   def index
@@ -9,6 +9,16 @@ class CaseBoxesController < ApplicationController
   # GET /case_boxes/1 or /case_boxes/1.json
   def show
     @skins = @case_box.skins
+  end
+
+  def open
+    @skin = @case_box.random_skin
+
+    if @skin
+      respond_to do |format|
+        format.turbo_stream
+      end
+    end
   end
 
   private

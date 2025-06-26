@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :case_boxes, only: [ :index, :show ]
+  resources :case_boxes, only: [ :index, :show ] do
+    member do
+      post "open"
+    end
+  end
   # resources :skins, only: [ :index, :show ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

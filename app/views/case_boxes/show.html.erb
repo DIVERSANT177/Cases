@@ -2,6 +2,10 @@
 
 <%= render @case_box %>
 
+<%= button_to "Открыть кейс", open_case_box_path(@case_box), method: :post, turbo: true %>
+
+<div id='result'></div>
+
 <div id="skins">
   <h3>Список скинов</h3>
   <%= render @case_box.skins %>
