@@ -1,0 +1,2 @@
+class CaseBox < ApplicationRecord
+end

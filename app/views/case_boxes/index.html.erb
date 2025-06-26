@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Case boxes" %>
+
+<h1>Case boxes</h1>
+
+<div id="case_boxes">
+  <% @case_boxes.each do |case_box| %>
+    <%= render case_box %>
+    <p>
+      <%= link_to "Show this case box", case_box %>
+    </p>
+  <% end %>
+</div>

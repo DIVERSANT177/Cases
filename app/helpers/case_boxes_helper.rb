@@ -1,0 +1,2 @@
+module CaseBoxesHelper
+end
